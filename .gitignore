@@ -30,3 +30,8 @@ proguard/
 
 # Android Studio captures folder
 captures/
+
+# To stop this from overriding with other operating systems
+.idea
+.idea/libraries/support_vector_drawable_23_3_0.xml
+.idea/gradle.xml
