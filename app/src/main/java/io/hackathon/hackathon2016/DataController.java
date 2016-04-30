@@ -4,6 +4,8 @@ import android.content.res.AssetManager;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 import au.com.bytecode.opencsv.CSVReader;
 
@@ -102,4 +104,14 @@ public class DataController {
             return true;
         }
     }
+
+    public List<String> getAllRouts(){
+        List<String> routeValues = new ArrayList<>();
+        List<Routes> routes = Routes.find(Routes.class,"route_desc = ?", "3");
+        for (Routes r : routes){
+            routeValues.add(r.route_short_name + " " + r.route_long_name);
+        }
+        return routeValues;
+    }
+
 }
