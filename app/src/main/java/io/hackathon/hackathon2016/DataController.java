@@ -100,6 +100,26 @@ public class DataController {
     }
 
 
+
+    public String[] stopRoutesAndTime(String stopId){
+       List<Stop_Times> times=Stop_Times.find(Stop_Times.class,"stopid=?",stopId);
+        List<String> stopTimes = new ArrayList<>();
+        //String tripId="";
+        ArrayList<String> data = new ArrayList<>();
+        Routes routes ;
+        for (Stop_Times s: times){
+            //idTrip.add(s.trip_id);
+            stopTimes.add(s.arrival_time);
+            Trips trip = Trips.find(Trips.class,"tripid=?",s.trip_id).get(0);
+            routes=Routes.find(Routes.class,"routeid=?",trip.route_id).get(0);
+            data.add(s.arrival_time+" "+routes.route_short_name+" "+routes.route_long_name);
+        }
+
+
+        return (String[]) data.toArray();
+
+
+    }
     public boolean needsToUpdate(){
         if (Agency.find(Agency.class,"").size()>0) {
             return false;
