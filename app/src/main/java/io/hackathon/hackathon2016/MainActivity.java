@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.CursorAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.orm.SugarContext;
+
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -21,9 +24,11 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     Button b1, b2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+	    SugarContext.init(getBaseContext());
         setContentView(R.layout.activity_main);
 
         b1=(Button)findViewById(R.id.go);
@@ -152,4 +157,9 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     }
+
+	protected void onTerminate()
+	{
+		SugarContext.terminate();
+	}
 }
