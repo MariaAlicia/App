@@ -15,14 +15,19 @@
         android:layout_height="wrap_content"
         android:textSize="25dp"
         android:text="Enter stop number:"
+        android:layout_marginLeft="20dp"
         android:textColor="#ffffff"
+        android:layout_marginTop="100dp"
         android:id="@+id/hi"/>
 
     <EditText
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:inputType="phone"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
         android:maxLength="4"
+        android:background="#ffffff"
         android:layout_below="@+id/hi"
         />
 
@@ -32,6 +37,8 @@
         android:text="Or"
         android:textColor="#ffffff"
         android:textSize="25dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
         android:id="@+id/or"
         android:layout_below="@+id/go"
     />
@@ -41,6 +48,7 @@
         android:layout_height="45dp"
         android:layout_toRightOf="@+id/hi"
         android:textSize="20dp"
+        android:layout_marginLeft="20dp"
         android:text="Go"
         android:id="@+id/go"
         android:layout_below="@+id/hi"/>
@@ -50,6 +58,9 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/or"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:background="#ffffff"
         />
 
     <Button
@@ -57,6 +68,7 @@
         android:layout_height="45dp"
         android:layout_toRightOf="@+id/hi"
         android:textSize="20dp"
+        android:layout_marginLeft="20dp"
         android:text="Go"
         android:id="@+id/go2"
         android:layout_below="@+id/or"/>
