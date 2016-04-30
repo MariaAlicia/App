@@ -8,7 +8,7 @@ import com.orm.dsl.Table;
  */
 @Table
 public class Stop_Times extends SugarRecord {
-	String trip_id, arrival_time, departure_time, stop_id, stop_sequence, stop_headsign, pickup_type, drop_off_type, shape_dist_travelled;
+	String trip_id, arrival_time, departure_time, stop_id;
 	private long id;
 
 	public Stop_Times(){
@@ -20,11 +20,6 @@ public class Stop_Times extends SugarRecord {
 		this.arrival_time = values[1];
 		this.departure_time = values[2];
 		this.stop_id = values[3];
-		this.stop_sequence = values[4];
-		this.stop_headsign = values[5];
-		this.pickup_type = values[6];
-		this.drop_off_type = values[7];
-		this.shape_dist_travelled = values[8];
 	}
 
 	public Long getId(){
