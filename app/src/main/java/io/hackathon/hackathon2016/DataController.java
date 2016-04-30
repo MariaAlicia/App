@@ -114,9 +114,12 @@ public class DataController {
             routes=Routes.find(Routes.class,"routeid=?",trip.route_id).get(0);
             data.add(s.arrival_time+" "+routes.route_short_name+" "+routes.route_long_name);
         }
+        String[] dataArray = new String[data.size()];
+        for (int i =0 ; i<dataArray.length;i++){
+            dataArray[i]=data.get(i);
+        }
 
-
-        return (String[]) data.toArray();
+        return dataArray;
 
 
     }
