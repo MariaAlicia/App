@@ -1,8 +1,6 @@
 package io.hackathon.hackathon2016;
 
 import android.content.res.AssetManager;
-import android.graphics.drawable.shapes.Shape;
-import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
