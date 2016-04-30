@@ -7,6 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#65676d"
     tools:context="io.hackathon.hackathon2016.MainActivity">
 
     <TextView
@@ -14,12 +15,14 @@
         android:layout_height="wrap_content"
         android:textSize="25dp"
         android:text="Enter stop number:"
+        android:textColor="#ffffff"
         android:id="@+id/hi"/>
 
     <EditText
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:inputType="phone"
+        android:maxLength="4"
         android:layout_below="@+id/hi"
         />
 
@@ -27,6 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Or"
+        android:textColor="#ffffff"
         android:textSize="25dp"
         android:id="@+id/or"
         android:layout_below="@+id/go"
@@ -43,7 +47,7 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="fill_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/or"
         />

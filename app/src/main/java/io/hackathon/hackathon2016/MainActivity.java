@@ -33,22 +33,22 @@ public class MainActivity extends AppCompatActivity {
 
         b1=(Button)findViewById(R.id.go);
         b2=(Button)findViewById(R.id.go2);
+        // Spinner element
+        final Spinner s = (Spinner) findViewById(R.id.spinner);
+
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"YOUR MESSAGE",Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this,s.getSelectedItem().toString(),Toast.LENGTH_LONG).show();
             }
         });
 
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"YOUR MESSAGE",Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this,s.getSelectedItem().toString(),Toast.LENGTH_LONG).show();
             }
         });
-
-        // Spinner element
-        final Spinner s = (Spinner) findViewById(R.id.spinner);
 
         // Spinner click listener
         assert s != null;
