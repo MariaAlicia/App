@@ -35,7 +35,7 @@ public class DataController {
         //clearTables();//FOR TESTING ONLY
         if (!this.needsToUpdate())return;
         String next[]={};
-        String[] names={"agency.txt","calendar.txt","calendar_dates.txt","feed_info.txt","routes.txt",
+        String[] names={/*"agency.txt","calendar.txt","calendar_dates.txt","feed_info.txt",*/"routes.txt",
                 "stops.txt","stop_times.txt","trips.txt"};
         for (int i =0;i<names.length;i++) {
             try {
