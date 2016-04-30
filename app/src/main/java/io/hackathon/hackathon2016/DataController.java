@@ -85,37 +85,25 @@ public class DataController {
                         }
                     }
                     catch (ArrayIndexOutOfBoundsException e) {
-                        //nothing
+                        //nothing skips the row
                     }
-
                     next = reader.readNext();
                     lineNum++;
                 }
-
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
 
-
-
     public String[] stopRoutesAndTime(String stopId){
        List<Stop_Times> times=Stop_Times.find(Stop_Times.class,"stopid=?",stopId);
-        List<String> stopTimes = new ArrayList<>();
-        //String tripId="";
         ArrayList<String> data = new ArrayList<>();
-        Routes routes ;
         for (Stop_Times s: times){
-            //idTrip.add(s.trip_id);
-            stopTimes.add(s.arrival_time);
             Trips trip = Trips.find(Trips.class,"tripid=?",s.trip_id).get(0);
 
             List<Routes> routelist = Routes.find(Routes.class,"routeid = ? and routetype = ?",trip.route_id, "3");
-            if (routelist.size()==0){
-                continue;
-            }
+            if (routelist.size()==0)continue;
             Routes route = routelist.get(0);
             data.add(s.arrival_time+" "+route.route_short_name+" "+route.route_long_name);
         }
@@ -123,11 +111,9 @@ public class DataController {
         for (int i =0 ; i<dataArray.length;i++){
             dataArray[i]=data.get(i);
         }
-
         return dataArray;
-
-
     }
+
     public boolean needsToUpdate(){
         if (Routes.find(Routes.class,"").size()>0) {
             return false;
