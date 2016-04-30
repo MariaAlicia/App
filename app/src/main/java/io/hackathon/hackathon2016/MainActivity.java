@@ -1,28 +1,16 @@
 package io.hackathon.hackathon2016;
 
-import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CursorAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
-import com.orm.SugarContext;
-
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Calendar;
-import au.com.bytecode.opencsv.CSVReader;
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+	    DataController dataController = new DataController();
         
         b1=(Button)findViewById(R.id.go);
         b2=(Button)findViewById(R.id.go2);
@@ -97,13 +86,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Spinner Drop down elements
-        List<String> route = new ArrayList<String>();//replace this with the getRoutes()
-        route.add("Automobile");
-        route.add("Business Services");
-        route.add("Computers");
-        route.add("Education");
-        route.add("Personal");
-        route.add("Travel");
+        List<String> route = dataController.getAllRoutes();
 
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, route);
@@ -115,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
         s.setAdapter(dataAdapter);
 
         //update database
-	    DataController dataController = new DataController();
 	    dataController.updateDatabase(getAssets());
     }
 

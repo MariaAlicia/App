@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -107,9 +108,9 @@ public class DataController {
         }
     }
 
-    public Set<String> getAllRouts(){
-        Set<String> routeValues = new HashSet<>();
-        List<Routes> routes = Routes.find(Routes.class,"route_desc = ?", "3");
+    public List<String> getAllRoutes(){
+        List<String> routeValues = new ArrayList<>();
+        List<Routes> routes = Routes.find(Routes.class, "routetype = ? ORDER BY CAST(routeshortname AS int)", "3");
         for (Routes r : routes){
             routeValues.add(r.route_short_name + " " + r.route_long_name);
         }
