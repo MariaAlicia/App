@@ -144,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     public boolean needsToUpdate(){
         if (Agency.find(Agency.class,"").size()>0) {
             return false;
