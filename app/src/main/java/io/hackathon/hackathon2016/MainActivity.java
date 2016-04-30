@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CursorAdapter;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ import com.orm.SugarContext;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import au.com.bytecode.opencsv.CSVReader;
 import java.util.ArrayList;
@@ -46,7 +48,21 @@ public class MainActivity extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,s.getSelectedItem().toString(),Toast.LENGTH_LONG).show();
+                setContentView(R.layout.route_content);
+                ListView mainListView = (ListView) findViewById( R.id.mainListView );
+                String[] planets = new String[] { "Mercury", "Venus", "Earth", "Mars",
+                        "Jupiter", "Saturn", "Uranus", "Neptune"};
+                ArrayList<String> planetList = new ArrayList<String>();
+                planetList.addAll( Arrays.asList(planets) );
+                ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, planetList);
+
+                listAdapter.add( "Ceres" );
+                listAdapter.add( "Pluto" );
+                listAdapter.add( "Haumea" );
+                listAdapter.add( "Makemake" );
+                listAdapter.add( "Eris" );
+
+                mainListView.setAdapter( listAdapter );
             }
         });
 
@@ -92,6 +108,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public ArrayList getRoutes(){
+        return new ArrayList(8);
+    }
+
+    public ArrayList getStops(){
         return new ArrayList(8);
     }
 
