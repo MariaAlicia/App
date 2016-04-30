@@ -1,10 +1,107 @@
 package io.hackathon.hackathon2016;
 
+import android.content.res.AssetManager;
+import android.graphics.drawable.shapes.Shape;
+import android.util.Log;
+
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import au.com.bytecode.opencsv.CSVReader;
+
 /**
  * Created by bob on 30/04/16.
  */
-public class dataController {
-    public dataController(){}
+public class DataController {
+    public DataController(){}
 
-    
+    public void clearTables()
+    {
+        Agency.deleteAll(Agency.class);
+        Calendar_Dates.deleteAll(Agency.class);
+        Calendar_Table.deleteAll(Calendar_Table.class);
+        Feed_Info.deleteAll(Feed_Info.class);
+        Routes.deleteAll(Routes.class);
+        Shapes.deleteAll(Shapes.class);
+        Stop_Times.deleteAll(Stop_Times.class);
+        Stops.deleteAll(Stops.class);
+        Trips.deleteAll(Trips.class);
+    }
+
+    public void updateDatabase(AssetManager assets) {
+        //clearTables();//FOR TESTING ONLY
+        if (!this.needsToUpdate())return;
+        String next[]={};
+        String[] names={"agency.txt","calendar.txt","calendar_dates.txt","feed_info.txt","routes.txt",
+                "stops.txt","stop_times.txt","trips.txt"};
+        for (int i =0;i<names.length;i++) {
+            try {
+                CSVReader reader = new CSVReader(new InputStreamReader(assets.open(names[i])));
+                reader.readNext();
+                next=reader.readNext();
+                int lineNum = 0;
+                while(next != null && lineNum < 500){
+                    try {
+                        switch (names[i]){
+                            case "agency.txt" :
+                                Agency ag = new Agency(next);
+                                ag.save();
+                                break;
+                            case "calendar.txt" :
+                                Calendar_Table cal = new Calendar_Table(next);
+                                cal.save();
+                                break;
+                            case "calendar_dates.txt" :
+                                Calendar_Dates dates =new Calendar_Dates(next);
+                                dates.save();
+                                break;
+                            case "feed_info.txt" :
+                                Feed_Info feed = new Feed_Info(next);
+                                feed.save();
+                                break;
+                            case "routes.txt" :
+                                Routes r = new Routes(next);
+                                r.save();
+                                break;
+                            case "stops.txt" :
+                                Stops stops = new Stops(next);
+                                stops.save();
+                                break;
+                            case "stop_times.txt" :
+                                Stop_Times stop_times = new Stop_Times(next);
+                                stop_times.save();
+                                break;
+                            case "trips.txt" :
+                                Trips trips = new Trips(next);
+                                trips.save();
+                                break;
+                            default:
+                                System.out.println("nope :( :( :( :(");
+                                System.out.println("i'm sorry i can't do that dave");
+
+                        }
+                    }
+                    catch (ArrayIndexOutOfBoundsException e) {
+                        //nothing
+                    }
+
+                    next = reader.readNext();
+                    lineNum++;
+                }
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    public boolean needsToUpdate(){
+        if (Agency.find(Agency.class,"").size()>0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }
