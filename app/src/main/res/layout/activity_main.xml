@@ -7,8 +7,10 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#65676d"
+    android:background="#E8EAF6"
     tools:context="io.hackathon.hackathon2016.MainActivity">
+
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -16,7 +18,7 @@
         android:textSize="25dp"
         android:text="Enter stop number:"
         android:layout_marginLeft="20dp"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:layout_marginTop="100dp"
         android:id="@+id/hi"/>
 
@@ -24,10 +26,11 @@
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:inputType="phone"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="1dp"
         android:layout_marginLeft="20dp"
         android:maxLength="4"
-        android:background="#ffffff"
+        android:background="@drawable/edittext_border"
+
         android:layout_below="@+id/hi"
         android:id="@+id/stopId"
         />
@@ -36,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Or"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:textSize="25dp"
         android:layout_marginTop="40dp"
         android:layout_marginLeft="20dp"
