@@ -21,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 	    DataController dataController = new DataController();
+
+        //update database
+        dataController.updateDatabase(getAssets());
         
         b1=(Button)findViewById(R.id.go);
         b2=(Button)findViewById(R.id.go2);
@@ -96,9 +99,6 @@ public class MainActivity extends AppCompatActivity {
 
         // attaching data adapter to spinner
         s.setAdapter(dataAdapter);
-
-        //update database
-	    dataController.updateDatabase(getAssets());
     }
 
     public ArrayList getRoutes(){
