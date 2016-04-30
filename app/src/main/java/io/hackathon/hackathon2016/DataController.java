@@ -111,8 +111,13 @@ public class DataController {
             //idTrip.add(s.trip_id);
             stopTimes.add(s.arrival_time);
             Trips trip = Trips.find(Trips.class,"tripid=?",s.trip_id).get(0);
-            routes=Routes.find(Routes.class,"routeid=?",trip.route_id).get(0);
-            data.add(s.arrival_time+" "+routes.route_short_name+" "+routes.route_long_name);
+
+            List<Routes> routelist = Routes.find(Routes.class,"routeid = ? and routetype = ?",trip.route_id, "3");
+            if (routelist.size()==0){
+                continue;
+            }
+            Routes route = routelist.get(0);
+            data.add(s.arrival_time+" "+route.route_short_name+" "+route.route_long_name);
         }
         String[] dataArray = new String[data.size()];
         for (int i =0 ; i<dataArray.length;i++){
@@ -124,7 +129,7 @@ public class DataController {
 
     }
     public boolean needsToUpdate(){
-        if (Agency.find(Agency.class,"").size()>0) {
+        if (Routes.find(Routes.class,"").size()>0) {
             return false;
         } else {
             return true;
