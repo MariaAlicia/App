@@ -29,6 +29,7 @@
         android:maxLength="4"
         android:background="#ffffff"
         android:layout_below="@+id/hi"
+        android:id="@+id/stopId"
         />
 
     <TextView
