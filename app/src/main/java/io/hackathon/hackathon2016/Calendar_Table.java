@@ -7,15 +7,15 @@ import com.orm.dsl.Table;
  * Created by mgoo on 30/04/16.
  */
 @Table
-public class Calendar extends SugarRecord{
+public class Calendar_Table extends SugarRecord{
     String service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date;
     private long id;
 
-    public Calendar(){
+    public Calendar_Table(){
 
     }
 
-    public Calendar(String[] values){
+    public Calendar_Table(String[] values){
         this.service_id = values[0];
         this.monday = values[1];
         this.tuesday = values[2];
