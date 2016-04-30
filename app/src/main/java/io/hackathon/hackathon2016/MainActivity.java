@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CursorAdapter;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -41,7 +42,21 @@ public class MainActivity extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,s.getSelectedItem().toString(),Toast.LENGTH_LONG).show();
+                setContentView(R.layout.route_content);
+                ListView mainListView = (ListView) findViewById( R.id.mainListView );
+                String[] times = new String[] { "Mercury", "Venus", "Earth", "Mars",
+                        "Jupiter", "Saturn", "Uranus", "Neptune"};//from method
+                ArrayList<String> busTimes = new ArrayList<String>();
+                busTimes.addAll( Arrays.asList(times));
+                ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, busTimes);
+
+                listAdapter.add( "Ceres" );//if method to get all times at this stop works
+                listAdapter.add( "Pluto" );//then these adds are not needed
+                listAdapter.add( "Haumea" );
+                listAdapter.add( "Makemake" );
+                listAdapter.add( "Eris" );
+
+                mainListView.setAdapter( listAdapter );
             }
         });
 
@@ -56,13 +71,10 @@ public class MainActivity extends AppCompatActivity {
                 planetList.addAll( Arrays.asList(planets) );
                 ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, planetList);
 
-                listAdapter.add( "Ceres" );
-                listAdapter.add( "Pluto" );
-                listAdapter.add( "Haumea" );
-                listAdapter.add( "Makemake" );
-                listAdapter.add( "Eris" );
-
                 mainListView.setAdapter( listAdapter );
+
+
+
             }
         });
 
