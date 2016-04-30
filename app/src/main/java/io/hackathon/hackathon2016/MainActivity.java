@@ -81,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
 
         // attaching data adapter to spinner
         s.setAdapter(dataAdapter);
+
+        //update database
+        this.updateDatabase();
     }
 
     public ArrayList getRoutes(){
@@ -142,6 +145,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean needsToUpdate(){
-        return false;
+        if (Agency.find(Agency.class,"").size()>0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
