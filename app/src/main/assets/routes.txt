@@ -1,0 +1,109 @@
+route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color
+32,GOW,"32","Island Bay Express (Island Bay - Wellington)","Island Bay Express (Wellington - Island Bay)",3,,00364a,ffffff
+054,NLDS,"054","Churton Park - Wellington","Wellington - Churton Park",3,,00364a,ffffff
+WRL,RAIL,"WRL","Wairarapa Line (Masterton - Wellington)","Wairarapa Line (Wellington - Masterton)",2,,00364a,ffffff
+058,NLDS,"058","Newlands - Wellington","Wellington - Newlands",3,,00364a,ffffff
+053,NLDS,"053","Johnsonville West (McLintock St - Johnsonville)","Johnsonville West (Johnsonville - McLintock St)",3,,00364a,ffffff
+050,NLDS,"050","Broadmeadows Shopper","Broadmeadows Shopper",3,,00364a,ffffff
+057,NLDS,"057","Woodridge - Wellington","Wellington - Woodridge",3,,00364a,ffffff
+120,VLYF,"120","Stokes Valley - Lower Hutt","Lower Hutt - Stokes Valley",3,,00364a,ffffff
+145,VLYF,"145","Belmont - Lower Hutt","Lower Hutt - Belmont",3,,00364a,ffffff
+24,GOW,"24","Miramar Heights - Wellington","Wellington - Miramar Heights",3,,00364a,ffffff
+130,VLYF,"130","Petone - Naenae","Naenae - Petone",3,,00364a,ffffff
+251,PTXL,"251","Paekakariki & Raumati South Shopper (To Coastlands)","Paekakariki & Raumati South Shopper (From Coastlands)",3,,00364a,ffffff
+290,MADG,"290","Waikanae - Otaki - Waikanae","Waikanae - Otaki - Waikanae",3,,00364a,ffffff
+10,GOW,"10","Newtown - Wellington","Wellington - Newtown",3,,00364a,ffffff
+14,GOW,"14","Rongotai - Wellington - Wilton","Wilton - Wellington - Rongotai",3,,00364a,ffffff
+3,GOW,"3","Karori - Wellington - Lyall Bay","Lyall Bay - Wellington - Karori",3,,00364a,ffffff
+205,TZWA,"205","Featherston - Martinborough","Martinborough - Featherston",3,,00364a,ffffff
+289,KCTL,"289","Kapiti Commuter (Waikanae - Wellington)","Kapiti Commuter (Wellington - Waikanae)",3,,8f8f8c,000000
+201,TZWA,"201","Masterton West","Masterton West",3,,00364a,ffffff
+N4,GOW,"N4","After Midnight (Wellington - Wadestown - Khandallah)","After Midnight (Wellington - Wadestown - Khandallah)",3,,00364a,ffffff
+22,GOW,"22","Southgate - Wellington - Mairangi","Mairangi - Wellington - Southgate",3,,00364a,ffffff
+204,TZWA,"204","Greytown - Woodside Station","Woodside Station - Greytown",3,,00364a,ffffff
+250,MANA,"250","Paraparaumu - Raumati South - Paraparaumu","Paraparaumu - Raumati South - Paraparaumu",3,,00364a,ffffff
+N6,MANA,"N6","After Midnight (Tawa - Porirua - Whitby)","After Midnight (Tawa - Porirua - Whitby)",3,,00364a,ffffff
+260,MANA,"260","Raumati Beach - Paraparaumu Beach - Paraparaumu","Paraparaumu - Paraparaumu Beach - Raumati Beach",3,,00364a,ffffff
+110,VLYF,"110","Emerald Hill - Upper Hutt - Petone","Petone - Upper Hutt - Emerald Hill",3,,00364a,ffffff
+121,VLYF,"121","Valley Heights (Gracefield - Stokes Valley - Gracefield)","Valley Heights (Gracefield - Stokes Valley - Gracefield)",3,,00364a,ffffff
+270,MANA,"270","Paraparaumu East - Paraparaumu","Paraparaumu - Paraparaumu East",3,,00364a,ffffff
+CCL,WCCL,"CCL","Cable Car (Kelburn - Wellington)","Cable Car (Wellington - Kelburn)",5,,db2032,ffffff
+N3,GOW,"N3","After Midnight (Wellington - Karori - Northland)","After Midnight (Wellington - Karori - Northland)",3,,00364a,ffffff
+111,VLYF,"111","Totara Park - Upper Hutt","Upper Hutt - Totara Park",3,,00364a,ffffff
+47,GOW,"47","Johnsonville - Newtown","Newtown - Johnsonville",3,,00364a,ffffff
+9,GOW,"9","Aro Street - Wellington","Wellington - Aro Street",3,,00364a,ffffff
+056,NLDS,"056","Paparangi - Wellington","Wellington - Paparangi",3,,00364a,ffffff
+45,GOW,"45","Ngaio - Wellington","Wellington - Ngaio",3,,00364a,ffffff
+29,GOW,"29","Southern Shopper (Island Bay - Brooklyn - Newtown)","Southern Shopper (Newtown - Brooklyn - Island Bay)",3,,00364a,ffffff
+18,GOW,"18","Campus Connection (Miramar - Karori)","Campus Connection (Karori - Miramar)",3,,00364a,ffffff
+154,VLYF,"154","Lower Hutt - Korokoro - Lower Hutt","Lower Hutt - Korokoro - Lower Hutt",3,,00364a,ffffff
+8,GOW,"8","Kowhai Park - Wellington","Wellington - Kowhai Park",3,,00364a,ffffff
+210,MANA,"210","Titahi Bay - Tawa - Johnsonville","Johnsonville - Tawa - Titahi Bay",3,,00364a,ffffff
+7,GOW,"7","Kingston - Wellington","Wellington - Kingston",3,,00364a,ffffff
+44,GOW,"44","Strathmore Park - Wellington - Khandallah (Loop Service)","Strathmore Park - Wellington - Khandallah (Loop Service)",3,,00364a,ffffff
+170,VLYF,"170","Lower Hutt - Wainuiomata South - Lower Hutt","Lower Hutt - Wainuiomata South - Lower hutt",3,,00364a,ffffff
+202,TZWA,"202","Masterton South","Masterton South",3,,00364a,ffffff
+236,MANA,"236","Whitby (Navigation Drive) - Paremata - Porirua","Porirua - Paremata - Whitby (Navigation Drive)",3,,00364a,ffffff
+91,VLYF,"91","Airport Flyer (Queensgate - City - Airport)","Airport Flyer (Airport - City - Queensgate)",3,,f77f00,000000
+263,PTXL,"263","Otaihanga Shopper (To Coastlands & Paraparaumu)","Otaihanga Shopper (From Paraparaumu & Coastlands)",3,,00364a,ffffff
+93,RUNC,"93","Upper Hutt Commuter (Timberlea - Wellington)","Upper Hutt Commuter (Wellington - Timberlea)",3,,8f8f8c,000000
+11,GOW,"11","Seatoun - Wellington","Wellington - Seatoun",3,,00364a,ffffff
+KPL,RAIL,"KPL","Kapiti Line (Waikanae - Wellington)","Kapiti Line (Wellington - Waikanae)",2,,00364a,ffffff
+28,GOW,"28","Beacon Hill Shuttle (Beacon Hill - Strathmore)","Beacon Hill Shuttle (Strathmore - Beacon Hill)",3,,00364a,ffffff
+203,TZWA,"203","Masterton - Lansdowne","Masterton - Lansdowne",3,,00364a,ffffff
+PNL,TRAN,"PNL","Capital Connection (Palmerston North - Wellington)","Capital Connection (Wellington - Palmerston North)",2,,27aae1,000000
+13,GOW,"13","Mairangi - Wellington","Wellington - Mairangi",3,,00364a,ffffff
+N5,NLDS,"N5","After Midnight (Newlands - Churton Park - Johnsonvillle)","After Midnight (Newlands - Churton Park - Johnsonvillle)",3,,00364a,ffffff
+97N,MANA,"97N","Polytech Link (Porirua Station - Ngauranga - Weltec Petone)","Polytech Link (Weltec Petone - Ngauranga - Porirua Station)",3,,8f8f8c,000000
+MEL,RAIL,"MEL","Melling Line (Melling - Wellington)","Melling Line (Wellington - Melling)",2,,00364a,ffffff
+N66,VLYF,"N66","After Midnight (Wellington - Wainuiomata)","After Midnight (Wellington - Wainuiomata)",3,,00364a,ffffff
+055,NLDS,"055","Grenada Village - Johnsonville - Wellington","Wellington - Johnsonville - Grenada Village",3,,00364a,ffffff
+17,GOW,"17","Victoria University - Wellington","Wellington - Victoria University",3,,00364a,ffffff
+200,TZWA,"200","Masterton - Featherston","Featherston - Masterton",3,,00364a,ffffff
+114,VLYF,"114","Trentham - Upper Hutt","Upper Hutt - Trentham",3,,00364a,ffffff
+226,MANA,"226","Sievers Grove - Elsdon - Sievers Grove","Sievers Grove - Elsdon - Sievers Grove",3,,00364a,ffffff
+81,VLYF,"81","Eastbourne - Petone - Wellington","Wellington - Petone - Eastbourne",3,,00364a,ffffff
+1,GOW,"1","Island Bay - Wellington","Wellington - Island Bay",3,,00364a,ffffff
+80,VLYF,"80","Wainuiomata Commuter (Wainuiomata - Wellington)","Wainuiomata Commuter (Wellington - Wainuiomata)",3,,8f8f8c,000000
+262,MANA,"262","Paraparaumu Beach - Paraparaumu via Mazengarb Rd","Paraparaumu - Paraparaumu Beach via Mazengarb Rd",3,,00364a,ffffff
+N88,VLYF,"N88","After Midnight (Wellington - Eastbourne)","After Midnight (Wellington - Eastbourne)",3,,00364a,ffffff
+160,VLYF,"160","Wainuiomata North - Lower Hutt","Lower Hutt - Wainuiomata North",3,,00364a,ffffff
+46,GOW,"46","Broadmeadows - Wellington","Wellington - Broadmeadows",3,,00364a,ffffff
+30,GOW,"30","Seatoun Express (Breaker Bay/Scorching Bay - Wellington)","Seatoun Express (Wellington - Breaker Bay/Scorching Bay)",3,,00364a,ffffff
+5,GOW,"5","Wellington - Hataitai (Loop Service)","Wellington - Hataitai (Loop Service)",3,,00364a,ffffff
+21,GOW,"21","Karori - Wellington - Vogeltown (Loop Service)","Karori - Wellington - Vogeltown (Loop Service)",3,,00364a,ffffff
+85,VLYF,"85","Eastbourne Express (Eastbourne - Wellington)","Eastbourne Express (Wellington - Eastbourne)",3,,00364a,ffffff
+84,VLYF,"84","Gracefield - Petone - Wellington","Wellington - Petone - Eastbourne",3,,00364a,ffffff
+052,NLDS,"052","Johnsonville - Newlands - Wellington","Wellington - Newlands - Johnsonville",3,,00364a,ffffff
+90,VLYF,"90","Stokes Valley Commuter (Stokes Valley - Wellington)","Stokes Valley Commuter (Wellington - Stokes Valley)",3,,8f8f8c,000000
+WHF,EBYW,"WHF","Wellington Harbour Ferry (Days Bay - Queens Wharf)","Wellington Harbour Ferry (Queens Wharf - Days Bay)",4,,00364a,ffffff
+20,GOW,"20","Highbury - Wellington - Mt Victoria","Mt Victoria - Wellington - Highbury",3,,00364a,ffffff
+206,TZWA,"206","Masterton East","Masterton East",3,,00364a,ffffff
+112,VLYF,"112","Te Marua - Upper Hutt","Upper Hutt - Te Marua",3,,00364a,ffffff
+92,RUNC,"92","Upper Hutt Commuter (Te Marua - Wellington)","Upper Hutt Commuter (Wellington - Te Marua)",3,,8f8f8c,000000
+4,GOW,"4","Happy Valley - Wellington","Wellington - Happy Valley",3,,00364a,ffffff
+97H,MANA,"97H","Polytech Link (Weltec Petone - Haywards - Whitireia Porirua)","Polytech Link (Whitireia Porirua - Haywards - Weltec Petone)",3,,8f8f8c,000000
+N22,VLYF,"N22","After Midnight (Wellington - Naenae - Stokes Valley - Upper Hutt)","After Midnight (Wellington - Naenae - Stokes Valley - Upper Hutt)",3,,00364a,ffffff
+220,MANA,"220","Titahi Bay - Ascot Park - Titahi Bay","Titahi Bay - Ascot Park - Titahi Bay",3,,00364a,ffffff
+23,GOW,"23","Houghton Bay - Wellington - Mairangi","Mairangi - Wellington - Houghton Bay",3,,00364a,ffffff
+N2,GOW,"N2","After Midnight (Wellington - Hataitai - Miramar - Strathmore - Seatoun)","After Midnight (Wellington - Hataitai - Miramar - Strathmore - Seatoun)",3,,00364a,ffffff
+JVL,RAIL,"JVL","Johnsonville Line (Johnsonville - Wellington)","Johnsonville Line (Wellington - Johnsonville)",2,,00364a,ffffff
+3S,GOW,"3S","Karori South - Wellington","Wellington - Karori South",3,,00364a,ffffff
+25,GOW,"25","Strathmore - Wellington","Wellington - Strathmore",3,,00364a,ffffff
+300,MANA,"300","From Whenua Tapu Cemetery (runs last Sunday of each month)","To Whenua Tapu Cemetery (runs last Sunday of each month)",3,,00364a,ffffff
+261,MANA,"261","Paraparaumu Beach - Paraparaumu via Guildford Dr","Paraparaumu - Paraparaumu Beach via Guildford Dr",3,,00364a,ffffff
+83,VLYF,"83","Eastbourne - Lower Hutt - Petone - Wellington","Wellington - Petone - Lower Hutt - Eastbourne",3,,00364a,ffffff
+6,GOW,"6","Lyall Bay - Wellington","Wellington - Lyall Bay",3,,00364a,ffffff
+NEX,TRAN,"NEX","Northern Explorer (Auckland - Wellington)","Northern Explorer (Wellington - Auckland)",2,,27aae1,000000
+211,MANA,"211","Porirua - Johnsonville - Wellington","Wellington - Johnsonville - Porirua",3,,8f8f8c,000000
+2,GOW,"2","Miramar - Wellington","Wellington - Miramar",3,,00364a,ffffff
+230,MANA,"230","Whitby (The Crowsnest) - Porirua","Porirua - Whitby (The Crowsnest)",3,,00364a,ffffff
+43,GOW,"43","Strathmore Park - Wellington - Khandallah (Loop Service)","Strathmore Park - Wellington - Khandallah (Loop Service)",3,,00364a,ffffff
+N1,GOW,"N1","After Midnight (Wellington - Island Bay - Lyall Bay)","After Midnight (Wellington - Island Bay - Lyall Bay)",3,,00364a,ffffff
+150,VLYF,"150","Western Hills (Kelson - Lower Hutt - Maungaraki)","Western Hills (Maungaraki - Lower Hutt - Kelson)",3,,00364a,ffffff
+N8,VLYF,"N8","After Midnight (Lower Hutt - Wellington)","After Midnight (Lower Hutt - Wellington)",3,,00364a,ffffff
+HVL,RAIL,"HVL","Hutt Valley Line (Upper Hutt - Wellington)","Hutt Valley Line (Wellington - Upper Hutt)",2,,00364a,ffffff
+280,MANA,"280","Waikanae - Waikanae Beach - Waikanae","Waikanae - Waikanae Beach - Waikanae",3,,00364a,ffffff
+115,VLYF,"115","Upper Hutt - Pinehaven - Upper Hutt","Upper Hutt - Pinehaven - Upper Hutt",3,,00364a,ffffff
+31,GOW,"31","Miramar North Express (Miramar - Wellington)","Miramar North Express (Wellington - Miramar)",3,,00364a,ffffff
+3W,GOW,"3W","Karori West - Wellington","Wellington - Karori West",3,,00364a,ffffff
