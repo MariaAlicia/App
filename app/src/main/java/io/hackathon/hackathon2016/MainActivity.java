@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-	    DataController dataController = new DataController();
+	    final DataController dataController = new DataController();
 
         //update database
         dataController.updateDatabase(getAssets());
@@ -33,19 +34,14 @@ public class MainActivity extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                EditText stopIdEditText = ((EditText)findViewById(R.id.stopId));
+                String stopId = stopIdEditText.getText().toString();
                 setContentView(R.layout.route_content);
                 ListView mainListView = (ListView) findViewById( R.id.mainListView );
-                String[] times = new String[] { "Mercury", "Venus", "Earth", "Mars",
-                        "Jupiter", "Saturn", "Uranus", "Neptune"};//from method
+                String[] times = dataController.stopRoutesAndTime(stopId);
                 ArrayList<String> busTimes = new ArrayList<String>();
                 busTimes.addAll( Arrays.asList(times));
                 ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, busTimes);
-
-                listAdapter.add( "Ceres" );//if method to get all times at this stop works
-                listAdapter.add( "Pluto" );//then these adds are not needed
-                listAdapter.add( "Haumea" );
-                listAdapter.add( "Makemake" );
-                listAdapter.add( "Eris" );
 
                 mainListView.setAdapter( listAdapter );
             }
