@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        this.updateDatabase();
     }
 
     public void updateDatabase() {
@@ -73,6 +75,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean needsToUpdate(){
-        return false;
+        if (Agency.find(Agency.class,"").size()>0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
