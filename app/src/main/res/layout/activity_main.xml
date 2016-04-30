@@ -12,5 +12,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Hello World!"
+        android:id="@+id/hi"/>
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@+id/hi"
+        android:text="Go"
+        android:id="@+id/go"
+        android:layout_below="@+id/hi"/>
 </RelativeLayout>
