@@ -1,10 +1,9 @@
 package io.hackathon.hackathon2016;
 
 import android.app.Activity;
-import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,20 +14,24 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    Button b1, b2;
+    private Button b1, b2;
+	final private DataController dataController = new DataController();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-	    final DataController dataController = new DataController();
+	    super.onCreate(savedInstanceState);
+	    setContentView(R.layout.activity_main);
+	    initializeMain();
+    }
 
+	private void initializeMain(){
         //update database
         dataController.updateDatabase(getAssets());
         
@@ -42,29 +45,29 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 EditText stopIdEditText = ((EditText)findViewById(R.id.stopId));
                 String stopId = stopIdEditText.getText().toString();
-                setContentView(R.layout.route_content);
-                ListView mainListView = (ListView) findViewById( R.id.mainListView );
+
                 String[] times = dataController.stopRoutesAndTime(stopId);
                 ArrayList<String> busTimes = new ArrayList<String>();
-                busTimes.addAll( Arrays.asList(times));
-                ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, busTimes);
+	            busTimes.addAll( Arrays.asList(times));
 
-                mainListView.setAdapter( listAdapter );
+	            if(busTimes.isEmpty())
+	            {
+		            Toast.makeText(MainActivity.this, "Invalid stop", Toast.LENGTH_SHORT).show();
+		            return;
+	            }
+
+	            Intent i = new Intent(getApplicationContext(), StopTimesActivity.class);
+	            i.putExtra("busTimes", busTimes);
+	            startActivity(i);
             }
         });
 
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setContentView(R.layout.route_content);
-                ListView mainListView = (ListView) findViewById( R.id.mainListView );
-                String[] planets = new String[] { "Mercury", "Venus", "Earth", "Mars",
-                        "Jupiter", "Saturn", "Uranus", "Neptune"};
-                ArrayList<String> planetList = new ArrayList<String>();
-                planetList.addAll( Arrays.asList(planets) );
-                ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, planetList);
 
-                mainListView.setAdapter( listAdapter );
+	            Intent i = new Intent(getApplicationContext(), RouteStopsActivity.class);
+	            startActivity(i);
             }
         });
 
