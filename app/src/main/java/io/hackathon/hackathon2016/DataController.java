@@ -116,6 +116,20 @@ public class DataController {
         return data;
     }
 
+	public void addStopsToList(String stopId, List<String> data){
+		Calendar c = Calendar.getInstance();
+		int hour = c.get(Calendar.HOUR_OF_DAY);
+		List<Stop_Times> times=Stop_Times.find(Stop_Times.class,"stopid = ? AND (arrivaltime LIKE ? OR arrivaltime LIKE ?) ORDER BY arrivaltime", stopId, hour+"%", (hour+1)+"%");
+		for (Stop_Times s: times){
+			Trips trip = Trips.find(Trips.class,"tripid=?",s.trip_id).get(0);
+
+			List<Routes> routelist = Routes.find(Routes.class,"routeid = ? and routetype = ?",trip.route_id, "3");
+			if (routelist.size()==0)continue;
+			Routes route = routelist.get(0);
+			data.add(s.arrival_time+" "+route.route_short_name+" "+route.route_long_name);
+		}
+	}
+
     public boolean needsToUpdate(){
         if (Routes.find(Routes.class,"").size()>0) {
             return false;
@@ -151,4 +165,12 @@ public class DataController {
         return stopData;
     }
 
+	public boolean areThereStops(String stopId)
+	{
+		Calendar c = Calendar.getInstance();
+		int hour = c.get(Calendar.HOUR_OF_DAY);
+		List<Stop_Times> times=Stop_Times.find(Stop_Times.class,"stopid = ? AND (arrivaltime LIKE ? OR arrivaltime LIKE ?) LIMIT 1", stopId, hour+"%", (hour+1)+"%");
+
+		return !times.isEmpty();
+	}
 }

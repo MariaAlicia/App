@@ -14,13 +14,17 @@ public class StopTimesActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		final DataController dataController = new DataController();
 
-		ArrayList<String> busTimes = getIntent().getExtras().getStringArrayList("busTimes");
+		String stopId = getIntent().getExtras().getString("stopId");
+		ArrayList<String> busTimes = new ArrayList<>();
 
 		setContentView(R.layout.route_content);
 		ListView mainListView = (ListView) findViewById( R.id.mainListView );
 		ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(StopTimesActivity.this, android.R.layout.simple_list_item_1, busTimes);
 
 		mainListView.setAdapter( listAdapter );
+
+		new AsyncStopLoader(busTimes).execute(stopId);
 	}
 }

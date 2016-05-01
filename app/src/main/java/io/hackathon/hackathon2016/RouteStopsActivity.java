@@ -16,8 +16,10 @@ public class RouteStopsActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		final DataController dataController = new DataController();
 
-		ArrayList<String> stops = getIntent().getExtras().getStringArrayList("stops");
+		String routeName = getIntent().getExtras().getString("routeName");
+		ArrayList<String> stops = (ArrayList<String>)dataController.getStops(routeName);
 
 		setContentView(R.layout.route_content);
 		ListView mainListView = (ListView) findViewById( R.id.mainListView );

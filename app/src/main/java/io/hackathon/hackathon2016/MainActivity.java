@@ -46,16 +46,14 @@ public class MainActivity extends AppCompatActivity {
                 EditText stopIdEditText = ((EditText)findViewById(R.id.stopId));
                 String stopId = stopIdEditText.getText().toString();
 
-                ArrayList<String> busTimes = (ArrayList<String>)dataController.stopRoutesAndTime(stopId);
-
-	            if(busTimes.isEmpty())
+	            if(!dataController.areThereStops(stopId))
 	            {
 		            Toast.makeText(MainActivity.this, "Invalid stop", Toast.LENGTH_SHORT).show();
 		            return;
 	            }
 
 	            Intent i = new Intent(getApplicationContext(), StopTimesActivity.class);
-	            i.putExtra("busTimes", busTimes);
+	            i.putExtra("stopId", stopId);
 	            startActivity(i);
             }
         });
@@ -65,10 +63,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 	            Spinner sp = (Spinner)findViewById(R.id.spinner);
 	            String routeName = sp.getSelectedItem().toString();
-	            ArrayList<String> stops = (ArrayList<String>)dataController.getStops(routeName);
 
 	            Intent i = new Intent(getApplicationContext(), RouteStopsActivity.class);
-	            i.putExtra("stops", stops);
+	            i.putExtra("routeName", routeName);
 	            startActivity(i);
             }
         });
