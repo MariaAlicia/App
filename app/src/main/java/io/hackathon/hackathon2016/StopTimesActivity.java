@@ -1,30 +1,48 @@
 package io.hackathon.hackathon2016;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Sami on 1/05/2016.
  */
 public class StopTimesActivity extends AppCompatActivity {
+
+    ListView mainListView;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		final DataController dataController = new DataController();
 
 		String stopId = getIntent().getExtras().getString("stopId");
-		ArrayList<String> busTimes = new ArrayList<>();
+        AsyncStopTimesLoader loader = new AsyncStopTimesLoader();
+        loader.execute(stopId);
 
 		setContentView(R.layout.route_content);
-		ListView mainListView = (ListView) findViewById( R.id.mainListView );
-		ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(StopTimesActivity.this, android.R.layout.simple_list_item_1, busTimes);
-
-		mainListView.setAdapter( listAdapter );
-
-		new AsyncStopLoader(busTimes).execute(stopId);
+		mainListView = (ListView) findViewById( R.id.mainListView );
 	}
+
+    class AsyncStopTimesLoader extends AsyncTask<String, Void, List<String>> {
+
+        @Override
+        protected List<String> doInBackground(String... params) {
+            DataController dataController = new DataController();
+
+            return dataController.stopRoutesAndTime(params[0]);
+        }
+
+        @Override
+        protected void onPostExecute(List<String> strings) {
+            super.onPostExecute(strings);
+            ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(StopTimesActivity.this, android.R.layout.simple_list_item_1, strings);
+
+            mainListView.setAdapter( listAdapter );
+        }
+    }
 }
