@@ -99,7 +99,7 @@ public class DataController {
         }
     }
 
-    public String[] stopRoutesAndTime(String stopId){
+    public List<String> stopRoutesAndTime(String stopId){
         Calendar c = Calendar.getInstance();
         int hour = c.get(Calendar.HOUR_OF_DAY);
         List<Stop_Times> times=Stop_Times.find(Stop_Times.class,"stopid = ? AND (arrivaltime LIKE ? OR arrivaltime LIKE ?) ORDER BY arrivaltime", stopId, hour+"%", (hour+1)+"%");
@@ -112,11 +112,8 @@ public class DataController {
             Routes route = routelist.get(0);
             data.add(s.arrival_time+" "+route.route_short_name+" "+route.route_long_name);
         }
-        String[] dataArray = new String[data.size()];
-        for (int i =0 ; i<dataArray.length;i++){
-            dataArray[i]=data.get(i);
-        }
-        return dataArray;
+
+        return data;
     }
 
     public boolean needsToUpdate(){
@@ -136,7 +133,7 @@ public class DataController {
         return routeValues;
     }
 
-    public String[] getStops(String route){
+    public List<String> getStops(String route){
         Calendar c = Calendar.getInstance();
         int hour = c.get(Calendar.HOUR_OF_DAY);
         String shortName = route.split(",")[0];
@@ -150,11 +147,8 @@ public class DataController {
                 stopData.add(s.stop_desc + " - "+ st.arrival_time);
             }
         }
-        String[] stopArray = new String[stopData.size()];
-        for (int i = 0; i<stopArray.length; i++){
-            stopArray[i] = stopData.get(i);
-        }
-        return stopArray;
+
+        return stopData;
     }
 
 }

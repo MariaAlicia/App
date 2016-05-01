@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -16,13 +17,11 @@ public class RouteStopsActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+		ArrayList<String> stops = getIntent().getExtras().getStringArrayList("stops");
+
 		setContentView(R.layout.route_content);
 		ListView mainListView = (ListView) findViewById( R.id.mainListView );
-		String[] planets = new String[] { "Mercury", "Venus", "Earth", "Mars",
-				"Jupiter", "Saturn", "Uranus", "Neptune"};
-		ArrayList<String> planetList = new ArrayList<String>();
-		planetList.addAll( Arrays.asList(planets) );
-		ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(RouteStopsActivity.this, android.R.layout.simple_list_item_1, planetList);
+		ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(RouteStopsActivity.this, android.R.layout.simple_list_item_1, stops);
 
 		mainListView.setAdapter( listAdapter );
 	}

@@ -46,9 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 EditText stopIdEditText = ((EditText)findViewById(R.id.stopId));
                 String stopId = stopIdEditText.getText().toString();
 
-                String[] times = dataController.stopRoutesAndTime(stopId);
-                ArrayList<String> busTimes = new ArrayList<String>();
-	            busTimes.addAll( Arrays.asList(times));
+                ArrayList<String> busTimes = (ArrayList<String>)dataController.stopRoutesAndTime(stopId);
 
 	            if(busTimes.isEmpty())
 	            {
@@ -65,8 +63,12 @@ public class MainActivity extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+	            Spinner sp = (Spinner)findViewById(R.id.spinner);
+	            String routeName = sp.getSelectedItem().toString();
+	            ArrayList<String> stops = (ArrayList<String>)dataController.getStops(routeName);
 
 	            Intent i = new Intent(getApplicationContext(), RouteStopsActivity.class);
+	            i.putExtra("stops", stops);
 	            startActivity(i);
             }
         });
