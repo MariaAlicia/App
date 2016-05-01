@@ -1,10 +1,13 @@
 package io.hackathon.hackathon2016;
 
+import android.content.Context;
 import android.content.res.AssetManager;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -88,7 +91,7 @@ public class DataController {
                         //nothing skips the row
                     }
                     next = reader.readNext();
-                    lineNum++;
+                    //lineNum++;
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -97,7 +100,9 @@ public class DataController {
     }
 
     public String[] stopRoutesAndTime(String stopId){
-       List<Stop_Times> times=Stop_Times.find(Stop_Times.class,"stopid=?",stopId);
+        Calendar c = Calendar.getInstance();
+        int hour = c.get(Calendar.HOUR_OF_DAY);
+        List<Stop_Times> times=Stop_Times.find(Stop_Times.class,"stopid = ? AND (arrivaltime LIKE ? OR arrivaltime LIKE ?) ORDER BY arrivaltime", stopId, hour+"%", (hour+1)+"%");
         ArrayList<String> data = new ArrayList<>();
         for (Stop_Times s: times){
             Trips trip = Trips.find(Trips.class,"tripid=?",s.trip_id).get(0);
@@ -126,9 +131,30 @@ public class DataController {
         List<String> routeValues = new ArrayList<>();
         List<Routes> routes = Routes.find(Routes.class, "routetype = ? ORDER BY CAST(routeshortname AS int)", "3");
         for (Routes r : routes){
-            routeValues.add(r.route_short_name + " " + r.route_long_name);
+            routeValues.add(r.route_short_name + ", " + r.route_long_name);
         }
         return routeValues;
+    }
+
+    public String[] getStops(String route){
+        Calendar c = Calendar.getInstance();
+        int hour = c.get(Calendar.HOUR_OF_DAY);
+        String shortName = route.split(",")[0];
+        Routes r = Routes.find(Routes.class, "routeshortname = ?", shortName).get(0);
+        List<Trips> tripsList = Trips.find(Trips.class, "routeid = ? LIMIT 10", r.route_id);
+        List<String> stopData = new ArrayList<>();
+        for (Trips t: tripsList){
+            List<Stop_Times> stop_timeList = Stop_Times.find(Stop_Times.class, "tripid = ? AND (arrivaltime LIKE ? OR arrivaltime LIKE ?) ORDER BY arrivaltime", t.trip_id, hour+"%", (hour+1)+"%");
+            for (Stop_Times st : stop_timeList){
+                Stops s = Stops.find(Stops.class, "stopid = ?", st.stop_id).get(0);
+                stopData.add(s.stop_desc + " - "+ st.arrival_time);
+            }
+        }
+        String[] stopArray = new String[stopData.size()];
+        for (int i = 0; i<stopArray.length; i++){
+            stopArray[i] = stopData.get(i);
+        }
+        return stopArray;
     }
 
 }
