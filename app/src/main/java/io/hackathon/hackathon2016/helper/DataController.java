@@ -9,15 +9,49 @@ import java.util.Calendar;
 import java.util.List;
 
 import au.com.bytecode.opencsv.CSVReader;
-import io.hackathon.hackathon2016.model.Routes;
-import io.hackathon.hackathon2016.model.Stop_Times;
-import io.hackathon.hackathon2016.model.Stops;
-import io.hackathon.hackathon2016.model.Trips;
 
 /**
  * Created by bob on 30/04/16.
  */
 public class DataController {
+    /**
+     *  this.route_id = values[0];
+     this.agency_id = values[1];
+     this.route_short_name = values[2];
+     this.route_long_name = values[3];
+     this.route_desc = values[4];
+     this.route_type = values[5];
+     this.route_url = values[6];
+     this.route_color = values[7];
+     this.route_text_color = values[8];
+
+     this.trip_id = values[0];
+     this.arrival_time = values[1];
+     this.departure_time = values[2];
+     this.stop_id = values[3];
+
+     this.stop_id = values[0];
+     this.stop_code = values[1];
+     this.stop_name = values[2];
+     this.stop_desc = values[3];
+     this.stop_lat = values[4];
+     this.stop_lon = values[5];
+     this.zone_id = values[6];
+     this.stop_url = values[7];
+     this.location_type = values[8];
+     this.parent_station = values[9];
+     this.stop_timezone = values[10];
+
+     this.route_id = values[0];
+     this.service_id = values[1];
+     this.trip_id = values[2];
+     this.trip_headsign = values[3];
+     this.direction_id = values[4];
+     this.block_id = values[5];
+     this.shape_id = values[6];
+     this.wheelchair_accessible = values[7];
+     this.bikes_allowed = values[8];
+     */
     public DataController() {
     }
 
