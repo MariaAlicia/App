@@ -6,8 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import io.hackathon.hackathon2016.helper.DataController;
 
 /**
  * Created by Sami on 1/05/2016.

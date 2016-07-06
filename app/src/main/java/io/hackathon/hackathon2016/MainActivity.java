@@ -12,13 +12,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+
+import io.hackathon.hackathon2016.helper.DataController;
 
 public class MainActivity extends AppCompatActivity {
     private Button b1, b2;

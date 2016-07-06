@@ -1,19 +1,18 @@
-package io.hackathon.hackathon2016;
+package io.hackathon.hackathon2016.helper;
 
-import android.content.Context;
 import android.content.res.AssetManager;
-import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
 import au.com.bytecode.opencsv.CSVReader;
+import io.hackathon.hackathon2016.model.Routes;
+import io.hackathon.hackathon2016.model.Stop_Times;
+import io.hackathon.hackathon2016.model.Stops;
+import io.hackathon.hackathon2016.model.Trips;
 
 /**
  * Created by bob on 30/04/16.

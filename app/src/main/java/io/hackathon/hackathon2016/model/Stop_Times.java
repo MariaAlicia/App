@@ -1,4 +1,4 @@
-package io.hackathon.hackathon2016;
+package io.hackathon.hackathon2016.model;
 
 import com.orm.SugarRecord;
 import com.orm.dsl.Table;
